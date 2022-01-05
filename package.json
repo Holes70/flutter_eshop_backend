@@ -1,0 +1,26 @@
+{
+  "name": "j",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bombarder70/dia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bombarder70/dia/issues"
+  },
+  "homepage": "https://github.com/Bombarder70/dia#readme",
+  "dependencies": {
+    "chart.js": "^3.5.1",
+    "v-calendar": "^2.3.4",
+    "vue": "^3.2.20",
+    "vue-chartjs": "^3.5.1",
+    "vue3-json-editor": "^1.1.3",
+  }
+}
