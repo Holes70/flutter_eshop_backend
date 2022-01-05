@@ -5,10 +5,12 @@
   $data = $db->request_data();
 
   try {
-    $webController->getJson($db->dbSelect(
+    $array['results'] = $db->dbSelect(
       "products",
       []
-    )); exit();
+    );
+
+    $webController->getJson($array);
   } catch(\Exception $e) {
     echo json_encode([
       "status" => "fail",
