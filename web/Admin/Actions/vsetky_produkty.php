@@ -5,10 +5,10 @@
   $data = $db->request_data();
 
   try {
-    var_dump($webController->getJson($db->dbSelect(
+    $webController->getJson($db->dbSelect(
       "products",
       []
-    ))); exit();
+    )); exit();
   } catch(\Exception $e) {
     echo json_encode([
       "status" => "fail",
