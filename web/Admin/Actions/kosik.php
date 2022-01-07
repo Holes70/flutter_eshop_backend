@@ -10,9 +10,20 @@
       [
         "where" => [
           "id_cart" => 1
+        ],
+        "join" => [
+          "products" => [
+            "id_product",
+            "id"
+          ]
         ]
       ]
     );
+
+    $array['cena_spolu'] = 0;
+    foreach ($array['results'] as $item) {
+      $array['cena_spolu'] += $item['price'];
+    }
 
     $webController->getJson($array);
   } catch(\Exception $e) {
