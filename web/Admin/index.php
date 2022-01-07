@@ -9,14 +9,14 @@
   require_once(__DIR__ . '/../../Core/boot.php');
 
   // Elasticsearch
-  if ($dia->config['web']['elasticsearch']) {
+  /*if ($dia->config['web']['elasticsearch']) {
     require "{$dia->config['dir']['root']}/vendor/autoload.php";
 
     $client = Elasticsearch\ClientBuilder::create()
       ->setHosts(['localhost:9200'])
       ->build()
     ;
-  }
+  }*/
   
   $dia->autoload();
 
