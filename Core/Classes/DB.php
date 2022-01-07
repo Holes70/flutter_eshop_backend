@@ -180,6 +180,18 @@ namespace Core\Classes {
       return TRUE;
     }
 
+    public function deleteByValues($table = "", $params = array()) {
+      extract($params);
+
+      $query = "DELETE from {$table} WHERE id_cart = $idCart AND id_product = $idProduct";
+
+      if (!$this->con->query($query)) {
+        echo $this->con->error;
+      } else {
+        return 1;
+      }
+    }
+
     public function update(string $tableName = '', int $rowId = 0, array $data = []) {
       $update = "";
 
