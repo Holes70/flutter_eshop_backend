@@ -188,7 +188,7 @@ namespace Core\Classes {
       if (!$this->con->query($query)) {
         echo $this->con->error;
       } else {
-        return 1;
+        echo 1;
       }
     }
 
