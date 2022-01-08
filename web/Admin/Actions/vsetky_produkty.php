@@ -7,7 +7,11 @@
   try {
     $array['results'] = $db->dbSelect(
       "products",
-      []
+      [
+        "where" => [
+          "available" => 1
+        ]
+      ]
     );
 
     $webController->getJson($array);
