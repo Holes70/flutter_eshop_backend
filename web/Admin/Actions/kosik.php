@@ -8,6 +8,7 @@
     $array['results'] = $db->dbSelect(
       "carts_products",
       [
+        "select" => "products.*",
         "where" => [
           "id_cart" => 1
         ],
