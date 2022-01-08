@@ -257,6 +257,27 @@ namespace Core\Classes {
     }
 
     /**
+     * GET table last item data
+     * tableName
+     * @return array
+     */
+    public function getLastItem($tableName) {
+      $query = "SELECT * FROM {$tableName} ORDER BY id desc LIMIT 1";
+
+      try {
+        $res = $this->con->query($query);
+
+        if (!$res) {
+          throw new \Exception("Query error");
+        } else {
+          return $res->fetch_assoc();
+        }
+      } catch(\Exception $e) {
+        return $e;
+      }
+    }
+
+    /**
      * SELECT from DB
      * $tableName
      * $conditions(where, order, group, joins)

@@ -18,6 +18,24 @@
     ]
   ]);
 
+  $pocetProduktov = reset($db->dbSelect(
+    tableName: "products",
+    conditions: [
+      "select" => "count",
+      "where" => [
+        "id" => $data->id_product
+      ]
+    ]
+  ));
+
+  $db->update(
+    tableName: "products",
+    rowId: $data->id_product,
+    data: [
+      "count" => ($pocetProduktov["count"] - 1)
+    ]
+  );
+
    /** 
    * GET inserted item ID 
    * tableName
