@@ -14,6 +14,14 @@
     ]
   ]);
 
+  $db->update(
+    tableName: "carts",
+    rowId: 1,
+    data: [
+      "is_order" => 1
+    ]
+  );
+
   $vsetkyProdukty = $db->dbSelect(
     tableName: "carts_products",
     conditions: [
