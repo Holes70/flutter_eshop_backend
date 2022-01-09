@@ -2,7 +2,7 @@
 
   global $db, $webController;
 
-  $data = $db->request_data();
+  $data = $_GET;
 
   try {
     $array['results'] = $db->dbSelect(
@@ -10,7 +10,7 @@
       [
         "select" => "products.*",
         "where" => [
-          "id_cart" => 1
+          "id_cart" => $data['cart_id']
         ],
         "join" => [
           "products" => [
