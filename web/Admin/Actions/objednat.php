@@ -10,13 +10,13 @@
       "serial_number" => rand(1000, 9999), // TODO: Toto sa dynamicky podla user_id
       "type" => 1,
       "id_customer_uid" => 1,
-      "id_cart" => 1
+      "id_cart" => (int)$data->id_cart
     ]
   ]);
 
   $db->update(
     tableName: "carts",
-    rowId: 1,
+    rowId: (int)$data->id_cart,
     data: [
       "is_order" => 1
     ]
@@ -33,7 +33,7 @@
         ]
       ],
       "where" => [
-        "id_cart" => 1
+        "id_cart" => (int)$data->id_cart
       ]
     ]
   );
