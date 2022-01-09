@@ -13,7 +13,7 @@
   $db->insert_array([
     'table' => "carts_products",
     'table_data' => [
-      "id_cart" => 1, // TODO: Toto sa dynamicky podla user_id
+      "id_cart" => $data->id_cart, // TODO: Toto sa dynamicky podla user_id
       "id_product" => $data->id_product
     ]
   ]);
