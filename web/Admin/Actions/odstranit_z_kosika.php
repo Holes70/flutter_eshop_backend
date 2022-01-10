@@ -14,7 +14,7 @@
     "carts_products", 
     [
       'idProduct' => $data->id_product,
-      'idCart' => 1
+      'idCart' => $data->id_cart
     ]
   );
 
