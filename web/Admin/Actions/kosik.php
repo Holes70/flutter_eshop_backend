@@ -26,7 +26,12 @@
       $array['cena_spolu'] += $item['price'];
     }
 
-    $webController->getJson($array);
+    if (empty($array['results'])) {
+      $webController->getJson($array);
+    } else {
+      echo "empty";
+    }
+
   } catch(\Exception $e) {
     echo json_encode([
       "status" => "fail",
