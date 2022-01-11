@@ -4,6 +4,7 @@ class Dia extends CustomFunctions {
     super();
     this.currentWebPage = this.getCurrentWebPage();
     this.previousWebPage = this.getPreviousWebPage();
+    this.dir = "holes/dia_eshop"; //TODO: Toto dynamicky
 
     this.tableName = "";
     this.data = [];
