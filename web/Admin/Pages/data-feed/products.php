@@ -1,19 +1,21 @@
 <?php
 
 $array = ["dress", "pants", "shoes", "leggins", "w_pants"];
-$womansProducts = ["dress", "leggins", "w_pants", "shoes"];
-$menProducts = ["pants", "shoes"];
+
+$womansProducts = ["dress", "leggins", "w_pants"];
+$menProducts = ["pants"];
+$spolocne = ["shoes"];
 
 for ($i=1;$i<=100;$i++) {
   $randomProduct = array_rand($array, 1);
 
-  if (in_array($array[$randomProduct], $womansProducts) && in_array($array[$randomProduct], $menProducts)) {
+  if (in_array($array[$randomProduct], $spolocne)) {
+    $type = 4;
+  } else if (in_array($array[$randomProduct], $menProducts)) {
     $type = 1;
   } else if (in_array($array[$randomProduct], $womansProducts)) {
-    $type = 3;
-  } else if(in_array($array[$randomProduct], $menProducts)) {
     $type = 2;
-  }
+  } 
 
   $db->insert_array([
     'table' => 'products',
@@ -31,6 +33,7 @@ for ($i=1;$i<=100;$i++) {
 }
 
 // TYPE
-// 1 - spolu
-// 2 - muz
-// 3 - zeny
+// 1 - muz
+// 2 - zeny
+// 3 - deti a vsetko
+// 4 - spolocne
