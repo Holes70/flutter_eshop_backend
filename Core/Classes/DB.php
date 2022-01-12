@@ -315,12 +315,25 @@ namespace Core\Classes {
       if (array_key_exists("where", $conditions)) {
         $i = 0;
         foreach ($conditions['where'] as $column => $value) {
-          $value = is_string($value) ? "'$value'" : $value;
+          $fullValues = "";
+          if (is_array($value)) {
+            foreach ($value as $val) {
+              if ($val != end($value)) {
+                $fullValues .= is_string($val) ? "'$val'" : $val .",";
+              } else {
+                $fullValues .= is_string($val) ? "'$val'" : $val;
+              }
+            }
+            $value = $fullValues;
+          } else if(is_string($value)) {
+            $value = "'$value'";
+          }
+
           if ($i == 0) {
-            $query = $query . " WHERE {$column} = {$value}";
+            $query = $query . " WHERE {$column} IN({$value})";
             $i++;
           } else {
-            $query = $query . " AND {$column} = {$value}";
+            $query = $query . " AND {$column} IN({$value})";
           }
         }
       }
