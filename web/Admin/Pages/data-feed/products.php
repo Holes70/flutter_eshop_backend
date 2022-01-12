@@ -6,7 +6,7 @@ $womansProducts = ["dress", "leggins", "w_pants"];
 $menProducts = ["pants"];
 $spolocne = ["shoes"];
 
-for ($i=1;$i<=100;$i++) {
+for ($i=1;$i<=200;$i++) {
   $randomProduct = array_rand($array, 1);
 
   if (in_array($array[$randomProduct], $spolocne)) {
