@@ -5,13 +5,23 @@
   $data = $_GET;
 
   try {
-    if ($data['type'] != "1") {
+    if ($data['type'] == "1") {
       $array['results'] = $db->dbSelect(
         "products",
         [
           "where" => [
             "available" => 1,
-            "type" => $data['type']
+            "type" => [1, 4],
+          ]
+        ]
+      );
+    } else if ($data['type'] == "2") {
+      $array['results'] = $db->dbSelect(
+        "products",
+        [
+          "where" => [
+            "available" => 1,
+            "type" => [2, 4],
           ]
         ]
       );
