@@ -5,15 +5,26 @@
   $data = $_GET;
 
   try {
-    $array['results'] = $db->dbSelect(
-      "products",
-      [
-        "where" => [
-          "available" => 1,
-          "type" => $data['type']
+    if ($data['type'] != "1") {
+      $array['results'] = $db->dbSelect(
+        "products",
+        [
+          "where" => [
+            "available" => 1,
+            "type" => $data['type']
+          ]
         ]
-      ]
-    );
+      );
+    } else {
+      $array['results'] = $db->dbSelect(
+        "products",
+        [
+          "where" => [
+            "available" => 1
+          ]
+        ]
+      );
+    }
 
     $webController->getJson($array);
   } catch(\Exception $e) {
