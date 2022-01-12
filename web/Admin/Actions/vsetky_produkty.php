@@ -2,14 +2,15 @@
 
   global $db, $webController;
 
-  $data = $db->request_data();
+  $data = $_GET;
 
   try {
     $array['results'] = $db->dbSelect(
       "products",
       [
         "where" => [
-          "available" => 1
+          "available" => 1,
+          "type" => $data['type']
         ]
       ]
     );
