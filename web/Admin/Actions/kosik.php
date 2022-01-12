@@ -26,6 +26,8 @@
       $array['cena_spolu'] += $item['price'];
     }
 
+    $array['cena_spolu'] = (float)number_format($array['cena_spolu'], 2);
+
     $webController->getJson($array);
   } catch(\Exception $e) {
     echo json_encode([
