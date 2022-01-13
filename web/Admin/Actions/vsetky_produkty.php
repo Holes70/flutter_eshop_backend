@@ -13,7 +13,7 @@
             "available" => 1,
             "type" => [1, 4],
           ],
-          "order_by" => "id ".$data['orderBy']
+          "order_by" => $data['orderName'] . " " . $data['orderBy']
         ]
       );
     } else if ($data['type'] == "2") {
@@ -23,8 +23,8 @@
           "where" => [
             "available" => 1,
             "type" => [2, 4],
-            "order_by" => "id ".$data['orderBy']
-          ]
+          ],
+          "order_by" => $data['orderName'] . " " . $data['orderBy']
         ]
       );
     } else {
@@ -33,8 +33,8 @@
         [
           "where" => [
             "available" => 1,
-            "order_by" => "id ".$data['orderBy']
-          ]
+          ],
+          "order_by" => $data['orderName'] . " " . $data['orderBy']
         ]
       );
     }
