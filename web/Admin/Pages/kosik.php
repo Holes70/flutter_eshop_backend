@@ -2,7 +2,7 @@
 
 use Components\TableLarge;
 
-$idCart = 1;
+$idCart = $_GET['idcart'];
 
 $carts = new TableLarge("carts_products");
 $carts->conditions([
