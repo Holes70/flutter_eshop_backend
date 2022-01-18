@@ -5,24 +5,14 @@
   $data = $_GET;
 
   try {
-    if ($data['type'] == "1") {
+    if ($data['type'] != "3") {
       $array['results'] = $db->dbSelect(
         "products",
         [
           "where" => [
             "available" => 1,
-            "type" => [1, 4],
-          ],
-          "order_by" => $data['orderName'] . " " . $data['orderBy']
-        ]
-      );
-    } else if ($data['type'] == "2") {
-      $array['results'] = $db->dbSelect(
-        "products",
-        [
-          "where" => [
-            "available" => 1,
-            "type" => [2, 4],
+            //["discount", ">", 0],
+            "type" => $data['type'] == "1" ? [1, 4] : [2, 4],
           ],
           "order_by" => $data['orderName'] . " " . $data['orderBy']
         ]
