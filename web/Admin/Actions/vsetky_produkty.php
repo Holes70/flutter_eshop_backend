@@ -9,10 +9,10 @@
       $array['results'] = $db->dbSelect(
         "products",
         [
-          "where" => [
-            "available" => 1,
-            //["discount", ">", 0],
-            "type" => $data['type'] == "1" ? [1, 4] : [2, 4],
+          "whereArray" => [
+            ["available", "=", 1],
+            ["discount", ">", $data['show_only_discounts'] == "true" ? 0 : -1],
+            ["type", "in", $data['type'] == "1" ? [1, 4] : [2, 4]],
           ],
           "order_by" => $data['orderName'] . " " . $data['orderBy']
         ]
