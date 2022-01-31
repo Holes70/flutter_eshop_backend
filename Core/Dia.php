@@ -185,20 +185,22 @@ namespace Core {
         $bootstrap = "<link rel='stylesheet' href='../../Core/public/css/bootstrap.min.css'>";
       }
 
-      /*if ($this->config['web']['dropzone']) {
+      if ($this->config['web']['dropzone']) {
         $dropzone = "
           <link rel='stylesheet' type='text/css' href='../../Core/public/css/basic.min.css'>
           <link rel='stylesheet' type='text/css' href='../../Core/public/css/dropzone.min.css'>
           <script src='../../Core/public/js/dropzone.js'></script>
         ";
-      }*/
+      }
 
       if ($this->config['web']['vue']) {
         $vue = "
+          <script src='../../Core/public/js/popper.js'></script>
           <script src='../../node_modules/vue/dist/vue.global.prod.js'></script>
           <script src='../../node_modules/axios/dist/axios.min.js'></script>
           <script src='../../node_modules/chart.js/dist/chart.min.js'></script>
           <script src='../../node_modules/jquery/dist/jquery.min.js'></script>
+          <script src='../../Core/public/js/bootstrap.js'></script>
           <script src='../../node_modules/vue3-sfc-loader/dist/vue3-sfc-loader.js'></script>
           <script src='../../node_modules/mitt/dist/mitt.umd.js'></script>
           <script src='../../Core/public/js/CustomFunctions.js'></script>
@@ -214,6 +216,7 @@ namespace Core {
         <meta charset='{$this->config['head']['charset']}'>
         <head>
           {$bootstrap}
+          {$dropzone}
           {$css_files}
           {$vue}
           {$script_files}
