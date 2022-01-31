@@ -73,7 +73,7 @@
           <input 
             type="submit" 
             class="btn btn-primary"
-            value="Vytvoriť"
+            value="Add record"
           />
         </div>
       </div>
