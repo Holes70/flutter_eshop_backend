@@ -5,7 +5,7 @@
       <div class="modal-dialog modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Nový záznam (<var class="color-primary">{{ tableName }}</var>)</h5>
+            <h5 class="modal-title">New record (<var class="color-primary">{{ tableName }}</var>)</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -23,7 +23,7 @@
     <!-- End modal -->
 
     <div class="row float-right m-1">
-      <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Pridať záznam</button>
+      <button data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Add new record</button>
     </div>
     <div class="clearfix"></div>
   </div>
