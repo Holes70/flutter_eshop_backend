@@ -5,7 +5,7 @@
         <button 
           class="page-link"
           @click="loadPreviousPage()"
-        >Prechádzajúca</button>
+        >Previous</button>
       </li>
       <li 
         v-for="page in pages" 
@@ -21,7 +21,7 @@
         <button 
           class="page-link"
           @click="loadNextPage()"
-        >Ďalšia</button>
+        >Next</button>
       </li>
     </ul>
   </nav>
