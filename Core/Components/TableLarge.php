@@ -5,6 +5,8 @@ namespace Components {
   class TableLarge extends \Core\Component {
 
     private array $buttons = [];
+    private array $tableButtons = [];
+    private array $customColumns = [];
     private string $emptyDataMessage = "";
     private string $fileDir= "";
 
@@ -14,6 +16,16 @@ namespace Components {
 
     public function buttons(array $buttons) {
       $this->buttons = $buttons;
+      return $this;
+    }
+
+    public function tableButtons(array $buttons) {
+      $this->tableButtons = $buttons;
+      return $this;
+    }
+
+    public function customColumns(array $columns) {
+      $this->customColumns = $columns;
       return $this;
     }
 
@@ -34,6 +46,8 @@ namespace Components {
           conditions: ".json_encode($this->conditions).",
           data: ".json_encode($this->data).",
           buttons: ".json_encode($this->buttons).",
+          tableButtons: ".json_encode($this->tableButtons).",
+          customColumns: ".json_encode($this->customColumns).",
           emptyDataMessage: \"{$this->emptyDataMessage}\",
           fileDir: \"{$this->fileDir}\"
         }'></dia-table-large>
